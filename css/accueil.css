@@ -1,0 +1,197 @@
+/* =========================================================
+   Chez Tantie — css/accueil.css (page index)
+   ========================================================= */
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 1.5rem 0 2rem;
+  background: linear-gradient(180deg, rgba(230,126,34,0.08) 0%, transparent 100%);
+}
+.hero-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.hero-kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ct-accent);
+  margin-bottom: 0.25rem;
+}
+.hero-titre {
+  font-size: clamp(1.9rem, 7vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+.hero-sous {
+  font-size: 1.05rem;
+  color: var(--ct-muted);
+  margin-bottom: 1.25rem;
+  max-width: 50ch;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--ct-radius-lg);
+  box-shadow: var(--ct-card-shadow);
+  background: var(--ct-blanc);
+}
+@media (min-width: 768px) {
+  .hero { padding: 2.5rem 0 3rem; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+}
+
+/* ---------- Titre de section ---------- */
+.section-titre {
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+.section-titre::after {
+  content: "";
+  display: block;
+  width: 48px; height: 4px;
+  border-radius: 2px;
+  background: var(--ct-accent);
+  margin-top: 0.5rem;
+  transition: background-color var(--ct-anim-intensity) var(--ct-ease);
+}
+
+/* ---------- Histoire ---------- */
+.histoire-texte {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.histoire-texte p { color: var(--ct-fg); }
+
+/* ---------- Catégories phares ---------- */
+.cat-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .cat-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.cat-carte {
+  display: block;
+  padding: 1.25rem;
+  background: var(--ct-blanc);
+  border-radius: var(--ct-radius);
+  box-shadow: var(--ct-card-shadow);
+  transition: transform var(--ct-anim-intensity) var(--ct-ease),
+              box-shadow var(--ct-anim-intensity) var(--ct-ease);
+}
+.cat-carte:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(28,28,28,0.12);
+}
+.cat-emoji {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.cat-carte h3 { margin-bottom: 0.3rem; }
+.cat-carte p  { color: var(--ct-muted); font-size: 0.95rem; }
+
+/* ---------- Plats à l'honneur ---------- */
+.honneur-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .honneur-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.plat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem;
+  background: var(--ct-blanc);
+  border-radius: var(--ct-radius);
+  box-shadow: var(--ct-card-shadow);
+  border-left: 4px solid var(--ct-accent);
+  transition: transform var(--ct-anim-intensity) var(--ct-ease),
+              box-shadow var(--ct-anim-intensity) var(--ct-ease),
+              border-color var(--ct-anim-intensity) var(--ct-ease);
+}
+.plat-card:hover { transform: translateY(-3px); }
+.plat-card-emoji {
+  font-size: 1.9rem;
+  line-height: 1;
+}
+.plat-card h3 { font-size: 1.1rem; }
+.plat-card p  { color: var(--ct-muted); font-size: 0.92rem; flex: 1; }
+.plat-card-prix {
+  font-family: var(--ct-font-title);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ct-accent);
+  margin-top: 0.4rem;
+  transition: color var(--ct-anim-intensity) var(--ct-ease);
+}
+
+/* ---------- Avis ---------- */
+.avis { background: rgba(28,28,28,0.03); }
+.avis-avert {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ct-muted);
+  margin-bottom: 1rem;
+}
+.avis-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .avis-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.avis-carte {
+  padding: 1.15rem;
+  background: var(--ct-blanc);
+  border-radius: var(--ct-radius);
+  box-shadow: var(--ct-card-shadow);
+  border-top: 3px solid var(--ct-accent);
+  transition: border-color var(--ct-anim-intensity) var(--ct-ease);
+}
+.avis-carte p {
+  font-style: italic;
+  color: var(--ct-fg);
+  margin-bottom: 0.6rem;
+}
+.avis-carte footer {
+  font-size: 0.85rem;
+  color: var(--ct-muted);
+}
+
+/* ---------- CTA final ---------- */
+.cta-final {
+  background: var(--ct-noir);
+  color: var(--ct-creme);
+  padding: 2.5rem 0;
+}
+.cta-final-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+.cta-final h2 { color: var(--ct-creme); }
+.cta-final p  { color: rgba(250,243,224,0.8); max-width: 40ch; }

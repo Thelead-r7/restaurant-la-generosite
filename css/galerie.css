@@ -1,0 +1,205 @@
+/* =========================================================
+   Chez Tantie — css/galerie.css
+   Grille + filtres + lightbox. Placeholders CSS.
+   ========================================================= */
+
+/* ---------- Intro ---------- */
+.galerie-intro { padding-bottom: 0.5rem; }
+.galerie-sous {
+  color: var(--ct-muted);
+  max-width: 55ch;
+  margin-top: 0.5rem;
+}
+.galerie-avert {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--ct-radius-sm);
+  background: rgba(230,126,34,0.12);
+  color: #8a4a0f;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ---------- Filtres ---------- */
+.galerie-filtres-wrap {
+  padding: 0.5rem 0 1rem;
+  position: sticky;
+  top: 64px;
+  z-index: 20;
+  background: linear-gradient(180deg, var(--ct-creme) 70%, transparent);
+}
+@media (min-width: 768px) {
+  .galerie-filtres-wrap { top: 72px; }
+}
+.galerie-filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.galerie-filtres button {
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  background: var(--ct-blanc);
+  color: var(--ct-noir);
+  border: 1.5px solid rgba(28,28,28,0.1);
+  transition: background-color var(--ct-anim-intensity) var(--ct-ease),
+              color var(--ct-anim-intensity) var(--ct-ease),
+              border-color var(--ct-anim-intensity) var(--ct-ease),
+              transform var(--ct-anim-intensity) var(--ct-ease);
+}
+.galerie-filtres button:hover {
+  transform: translateY(-1px);
+  border-color: var(--ct-accent);
+}
+.galerie-filtres button[aria-pressed="true"] {
+  background: var(--ct-accent);
+  color: var(--ct-blanc);
+  border-color: var(--ct-accent);
+}
+
+/* ---------- Grille ---------- */
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+@media (min-width: 640px) {
+  .galerie-grid { grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+}
+@media (min-width: 960px) {
+  .galerie-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.galerie-item {
+  position: relative;
+  border-radius: var(--ct-radius);
+  overflow: hidden;
+  cursor: pointer;
+  outline-offset: 3px;
+  box-shadow: var(--ct-card-shadow);
+  transition: transform var(--ct-anim-intensity) var(--ct-ease),
+              box-shadow var(--ct-anim-intensity) var(--ct-ease),
+              opacity    var(--ct-anim-intensity) var(--ct-ease);
+}
+.galerie-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(28,28,28,0.15);
+}
+.galerie-item:focus-visible {
+  outline: 3px solid var(--ct-accent);
+}
+.galerie-item.is-hidden {
+  display: none;
+}
+
+.galerie-vignette {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--g, var(--ct-accent));
+  color: var(--ct-blanc);
+  font-size: 2.6rem;
+  line-height: 1;
+}
+.galerie-vignette img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.galerie-ph span {
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+  transform: translateZ(0);
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28,28,28,0.85);
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity var(--ct-anim-intensity) var(--ct-ease);
+}
+.lightbox.is-open {
+  display: flex;
+  opacity: 1;
+}
+.lightbox-contenu {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  background: var(--ct-blanc);
+  border-radius: var(--ct-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  animation: lightbox-in var(--ct-anim-intensity) var(--ct-ease);
+}
+@keyframes lightbox-in {
+  from { transform: scale(0.96); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lightbox-contenu { animation: none; }
+}
+
+.lightbox-visuel {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#lightbox-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lightbox-ph {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ct-blanc);
+  font-size: 4rem;
+}
+
+.lightbox-texte {
+  padding: 1rem 1.15rem 1.25rem;
+}
+.lightbox-texte h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+.lightbox-texte p {
+  color: var(--ct-muted);
+  font-size: 0.92rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.6rem; right: 0.6rem;
+  z-index: 2;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: rgba(28,28,28,0.55);
+  color: var(--ct-blanc);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--ct-anim-intensity) var(--ct-ease),
+              transform var(--ct-anim-intensity) var(--ct-ease);
+}
+.lightbox-close:hover { background: rgba(28,28,28,0.8); transform: scale(1.05); }
+.lightbox-close:focus-visible { outline: 3px solid var(--ct-blanc); outline-offset: 2px; }

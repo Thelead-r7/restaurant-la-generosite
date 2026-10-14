@@ -1,0 +1,305 @@
+/* =========================================================
+   Chez Tantie — css/menu.css
+   Livre animé 3D (couverture rotateY) + cartes plats.
+   ========================================================= */
+
+/* ---------- Intro ---------- */
+.menu-intro { padding-bottom: 0.5rem; }
+.menu-sous {
+  color: var(--ct-muted);
+  max-width: 55ch;
+  margin-top: 0.5rem;
+}
+
+.menu-livre-section { padding-top: 1rem; }
+
+.menu-note {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--ct-muted);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ---------- Conteneur livre ---------- */
+.livre {
+  position: relative;
+  perspective: 1800px;
+  perspective-origin: center;
+}
+
+/* ---------- Couverture ---------- */
+.livre-couverture {
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform var(--ct-anim-intensity) var(--ct-ease),
+              opacity   var(--ct-anim-intensity) var(--ct-ease);
+  z-index: 3;
+  will-change: transform;
+}
+
+.livre.is-open .livre-couverture {
+  transform: rotateY(-160deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Fallback reduced-motion : pas de rotation, on masque direct */
+.livre.anim-reduite .livre-couverture {
+  transition: none;
+}
+.livre.anim-reduite.is-open .livre-couverture {
+  transform: none;
+  opacity: 0;
+}
+
+.livre-couverture-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 340px;
+  padding: 2rem 1.25rem;
+  border-radius: var(--ct-radius-lg);
+  text-align: center;
+  color: var(--ct-blanc);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 60%),
+    linear-gradient(135deg, var(--ct-orange), #C0392B 70%, var(--ct-noir));
+  box-shadow: 0 12px 30px rgba(28,28,28,0.25);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.livre-couverture-emoji {
+  font-size: 3rem;
+  line-height: 1;
+}
+.livre-couverture-titre {
+  color: var(--ct-blanc);
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  letter-spacing: 0.02em;
+}
+.livre-couverture-sous {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.livre-couverture .btn {
+  background: var(--ct-blanc);
+  color: var(--ct-noir);
+  margin-top: 0.5rem;
+}
+.livre-couverture .btn:hover { background: var(--ct-creme); }
+
+/* ---------- Pages du livre ---------- */
+.livre-pages {
+  position: relative;
+  margin-top: 0; /* la couverture est par-dessus quand fermé */
+  touch-action: pan-y;   /* laisse le scroll vertical passer, capte l'horizontal */
+}
+
+/* Quand fermé, les pages sont invisibles (sous la couverture) */
+.livre:not(.is-open) .livre-pages {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+.livre.is-open .livre-pages {
+  visibility: visible;
+  height: auto;
+}
+
+.livre-page {
+  display: none;
+  padding: 1.25rem;
+  background: var(--ct-blanc);
+  border-radius: var(--ct-radius-lg);
+  box-shadow: var(--ct-card-shadow);
+  border-top: 4px solid var(--ct-accent);
+  transition: border-color var(--ct-anim-intensity) var(--ct-ease),
+              box-shadow   var(--ct-anim-intensity) var(--ct-ease);
+}
+.livre-page.is-active { display: block; }
+
+/* Animation d'apparition de page (sobre) */
+@media (prefers-reduced-motion: no-preference) {
+  .livre-page.is-active {
+    animation: page-in var(--ct-anim-intensity) var(--ct-ease);
+  }
+  @keyframes page-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+.livre-page-entete {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.livre-page-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+.livre-page-titre {
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.livre-page-liste {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .livre-page-liste { grid-template-columns: 1fr 1fr; gap: 1rem; }
+}
+
+.livre-vide {
+  color: var(--ct-muted);
+  font-style: italic;
+  padding: 1rem;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+/* ---------- Carte plat ---------- */
+.plat {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--ct-creme);
+  border-radius: var(--ct-radius);
+  transition: transform var(--ct-anim-intensity) var(--ct-ease),
+              box-shadow var(--ct-anim-intensity) var(--ct-ease);
+}
+.plat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(28,28,28,0.08);
+}
+.plat.is-indisponible { opacity: 0.55; }
+.plat.is-indisponible .plat-nom { text-decoration: line-through; }
+
+.plat-visuel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: var(--ct-radius-sm);
+  background: var(--ct-blanc);
+  box-shadow: inset 0 0 0 1px rgba(28,28,28,0.05);
+  overflow: hidden;
+}
+.plat-visuel img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: var(--ct-radius-sm);
+}
+.plat-emoji { font-size: 1.8rem; line-height: 1; }
+
+.plat-corps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.plat-nom {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--ct-noir);
+}
+.plat-desc {
+  font-size: 0.85rem;
+  color: var(--ct-muted);
+  margin: 0;
+}
+.plat-pied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.plat-prix {
+  font-family: var(--ct-font-title);
+  font-weight: 700;
+  color: var(--ct-accent);
+  font-size: 0.95rem;
+  transition: color var(--ct-anim-intensity) var(--ct-ease);
+  white-space: nowrap;
+}
+.plat-flag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #C0392B;
+  background: rgba(192,57,43,0.1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* ---------- Contrôles de navigation ---------- */
+.livre-controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.livre:not(.is-open) .livre-controles {
+  display: none;
+}
+
+.livre-nav {
+  padding: 0.6rem 1rem;
+  border-radius: var(--ct-radius);
+  font-family: var(--ct-font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: var(--ct-blanc);
+  color: var(--ct-noir);
+  box-shadow: var(--ct-card-shadow);
+  border: 1.5px solid rgba(28,28,28,0.1);
+  transition: background-color var(--ct-anim-intensity) var(--ct-ease),
+              color var(--ct-anim-intensity) var(--ct-ease),
+              transform var(--ct-anim-intensity) var(--ct-ease);
+}
+.livre-nav:hover:not(:disabled) {
+  background: var(--ct-accent);
+  color: var(--ct-blanc);
+  border-color: var(--ct-accent);
+  transform: translateY(-1px);
+}
+.livre-nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.livre-nav:focus-visible {
+  outline: 3px solid var(--ct-accent);
+  outline-offset: 2px;
+}
+
+.livre-indicateur {
+  font-family: var(--ct-font-title);
+  font-weight: 600;
+  color: var(--ct-muted);
+  font-size: 0.9rem;
+  min-width: 3.5em;
+  text-align: center;
+}
+
+/* ---------- Fallback erreur fetch ---------- */
+.livre-erreur {
+  padding: 1.5rem;
+  background: var(--ct-blanc);
+  border-radius: var(--ct-radius);
+  border-left: 4px solid #C0392B;
+  box-shadow: var(--ct-card-shadow);
+}
+.livre-erreur h2 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+.livre-erreur p  { color: var(--ct-muted); font-size: 0.95rem; }

@@ -1,0 +1,35 @@
+{
+  "nav.accueil": "Akwa",
+  "nav.menu": "Menu",
+  "nav.galerie": "Photos",
+  "nav.reservation": "Réserve",
+  "nav.contact": "Passe voir",
+
+  "home.slogan": "Ici c'est doux dèh, y a pas deux !",
+  "home.cta_menu": "Regarde ça qui est au menu",
+  "home.cta_reserver": "Réserve ta table",
+
+  "menu.titre": "Ça qui est au menu",
+  "menu.ouvrir": "Ouvre le menu",
+  "menu.precedent": "Retour",
+  "menu.suivant": "Après",
+
+  "galerie.titre": "Nos photos",
+  "galerie.filtre_tout": "Tout",
+
+  "resa.titre": "Réserve ta table",
+  "resa.nom": "Ton nom",
+  "resa.tel": "Ton numéro",
+  "resa.date": "Quel jour",
+  "resa.heure": "Quelle heure",
+  "resa.personnes": "Vous êtes combien",
+  "resa.message": "Un mot (si tu veux)",
+  "resa.envoyer": "Voye ça sur WhatsApp",
+
+  "contact.titre": "Où on est",
+  "contact.adresse": "Où on est",
+  "contact.horaires": "Quand on est là",
+
+  "footer.merci": "Mèrci dèh !",
+  "footer.mentions": "Projet fictif — démonstration"
+}

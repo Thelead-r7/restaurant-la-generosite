@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E67E22">
+  <title>Réserver — Chez Tantie</title>
+  <meta name="description" content="Réservez votre table Chez Tantie. Projet fictif de démonstration — l'envoi passe par WhatsApp, aucune donnée n'est enregistrée.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reservation.css">
+</head>
+<body class="ambiance">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Chez Tantie</a>
+
+      <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+        <a href="index.html" data-i18n="nav.accueil">Accueil</a>
+        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+        <a href="galerie.html" data-i18n="nav.galerie">Galerie</a>
+        <a href="reservation.html" data-i18n="nav.reservation">Réserver</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="header-tools">
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Basculer la langue">FR</button>
+
+        <div class="ambiance-switch" role="group" aria-label="Ambiance du site">
+          <button type="button" data-ambiance="calme"   aria-pressed="false" aria-label="Ambiance calme">🌿</button>
+          <button type="button" data-ambiance="ambiance" aria-pressed="true"  aria-label="Ambiance normale">🔥</button>
+          <button type="button" data-ambiance="fete"    aria-pressed="false" aria-label="Ambiance fête">🎉</button>
+        </div>
+
+        <button id="burger" class="burger" type="button"
+                aria-label="Ouvrir le menu" aria-controls="site-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <section class="resa-intro">
+      <div class="container">
+        <h1 class="section-titre" data-i18n="resa.titre">Réserver une table</h1>
+        <p class="resa-sous">
+          Remplissez ce formulaire : le message sera préparé automatiquement
+          pour WhatsApp. Vous pourrez le relire avant de l'envoyer.
+        </p>
+        <p class="resa-avert">
+          ⚠️ Démonstration : ce formulaire ouvre WhatsApp. <strong>Aucune donnée
+          n'est enregistrée</strong> côté serveur (projet fictif).
+        </p>
+      </div>
+    </section>
+
+    <section class="resa-section">
+      <div class="container">
+        <form id="form-reservation" class="resa-form" novalidate>
+
+          <!-- Nom -->
+          <div class="champ">
+            <label for="resa-nom" data-i18n="resa.nom">Votre nom</label>
+            <input type="text" id="resa-nom" name="nom"
+                   autocomplete="name" required
+                   placeholder="Ex : Awa Koné">
+          </div>
+
+          <!-- Téléphone -->
+          <div class="champ">
+            <label for="resa-tel" data-i18n="resa.tel">Téléphone</label>
+            <input type="tel" id="resa-tel" name="tel"
+                   autocomplete="tel" inputmode="tel" required
+                   placeholder="Ex : 07 00 00 00 00">
+          </div>
+
+          <!-- Date -->
+          <div class="champ">
+            <label for="resa-date" data-i18n="resa.date">Date</label>
+            <input type="date" id="resa-date" name="date" required>
+          </div>
+
+          <!-- Heure -->
+          <div class="champ">
+            <label for="resa-heure" data-i18n="resa.heure">Heure</label>
+            <input type="time" id="resa-heure" name="heure" required>
+          </div>
+
+          <!-- Personnes -->
+          <div class="champ champ-large">
+            <label for="resa-personnes" data-i18n="resa.personnes">Nombre de personnes</label>
+            <input type="number" id="resa-personnes" name="personnes"
+                   min="1" max="30" step="1" inputmode="numeric" required
+                   placeholder="Ex : 4">
+          </div>
+
+          <!-- Message -->
+          <div class="champ champ-large">
+            <label for="resa-message" data-i18n="resa.message">Message (facultatif)</label>
+            <textarea id="resa-message" name="message" rows="4"
+                      placeholder="Ex : une table près de la musique, si possible."></textarea>
+          </div>
+
+          <!-- Bouton -->
+          <div class="champ champ-large champ-action">
+            <button type="submit" class="btn btn-primary btn-large"
+                    data-i18n="resa.envoyer">Envoyer sur WhatsApp</button>
+          </div>
+
+          <!-- Statut -->
+          <div id="resa-statut" class="resa-statut" role="status" aria-live="polite"></div>
+
+        </form>
+
+        <p class="resa-note">
+          Le message s'ouvrira dans WhatsApp. Vous pourrez le relire et l'envoyer
+          vous-même depuis votre compte.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FAB WHATSAPP ================= -->
+  <a id="whatsapp-fab" class="whatsapp-fab" role="button" aria-label="Contacter sur WhatsApp">
+    <span aria-hidden="true">💬</span>
+  </a>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Chez Tantie</div>
+        <div class="footer-note" data-i18n="footer.mentions">Projet fictif — démonstration</div>
+      </div>
+      <div class="footer-note" data-i18n="footer.merci">Merci !</div>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/menu-livre.js"></script>
+  <script defer src="js/galerie.js"></script>
+  <script defer src="js/reservation.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E67E22">
+  <title>Chez Tantie — Maquis ivoirien à Abidjan</title>
+  <meta name="description" content="Chez Tantie — le goût du pays au coin de la rue. Maquis ivoirien à Abidjan. Projet fictif de démonstration.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/accueil.css">
+</head>
+<body class="ambiance">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Chez Tantie</a>
+
+      <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+        <a href="index.html" data-i18n="nav.accueil">Accueil</a>
+        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+        <a href="galerie.html" data-i18n="nav.galerie">Galerie</a>
+        <a href="reservation.html" data-i18n="nav.reservation">Réserver</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="header-tools">
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Basculer la langue">FR</button>
+
+        <div class="ambiance-switch" role="group" aria-label="Ambiance du site">
+          <button type="button" data-ambiance="calme"   aria-pressed="false" aria-label="Ambiance calme">🌿</button>
+          <button type="button" data-ambiance="ambiance" aria-pressed="true"  aria-label="Ambiance normale">🔥</button>
+          <button type="button" data-ambiance="fete"    aria-pressed="false" aria-label="Ambiance fête">🎉</button>
+        </div>
+
+        <button id="burger" class="burger" type="button"
+                aria-label="Ouvrir le menu" aria-controls="site-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-texte">
+          <p class="hero-kicker" data-i18n="nav.accueil">Accueil</p>
+          <h1 class="hero-titre" data-i18n="home.slogan">Le goût du pays, au coin de la rue.</h1>
+          <p class="hero-sous">
+            Maquis ivoirien à Abidjan. Plats du pays, grillades braisées,
+            ambiance chaleureuse — tous les jours.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary"   href="menu.html"        data-i18n="home.cta_menu">Voir le menu</a>
+            <a class="btn btn-secondary" href="reservation.html" data-i18n="home.cta_reserver">Réserver une table</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="img/hero.svg" alt="Illustration Chez Tantie — plat du pays" width="800" height="600" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- Histoire -->
+    <section class="histoire">
+      <div class="container">
+        <h2 class="section-titre">Notre histoire</h2>
+        <div class="histoire-texte">
+          <p>
+            <strong>Chez Tantie</strong>, c'est le maquis du quartier : la marmite qui chante,
+            le braisier qui fume, les rires qui montent au coucher du soleil.
+          </p>
+          <p>
+            Ici, on sert les plats du pays comme à la maison — l'attiéké du matin,
+            le kedjenou qui mijote, le poisson braisé au piment. On s'assoit, on
+            discute, on repart le ventre plein et le cœur léger.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 catégories phares -->
+    <section class="categories">
+      <div class="container">
+        <h2 class="section-titre">Ça qui est fort</h2>
+        <div class="cat-grid">
+          <a class="cat-carte" href="menu.html">
+            <span class="cat-emoji" aria-hidden="true">🍗</span>
+            <h3>Plats du pays</h3>
+            <p>Sauce graine, kedjenou, riz gras — la vraie cuisine ivoirienne.</p>
+          </a>
+          <a class="cat-carte" href="menu.html">
+            <span class="cat-emoji" aria-hidden="true">🔥</span>
+            <h3>Grillades braisées</h3>
+            <p>Poulet, poisson, brochettes — braisés au feu de bois.</p>
+          </a>
+          <a class="cat-carte" href="menu.html">
+            <span class="cat-emoji" aria-hidden="true">🍹</span>
+            <h3>Boissons fraîches</h3>
+            <p>Bissap, gnamakoudji, jus de baobab — préparés maison.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 plats à l'honneur -->
+    <section class="honneur">
+      <div class="container">
+        <h2 class="section-titre">À l'honneur</h2>
+        <div class="honneur-grid">
+          <article class="plat-card">
+            <span class="plat-card-emoji" aria-hidden="true">🍗</span>
+            <h3>Kedjenou de poulet</h3>
+            <p>Poulet mijoté aux légumes, à l'étouffée.</p>
+            <span class="plat-card-prix">2 500 FCFA</span>
+          </article>
+          <article class="plat-card">
+            <span class="plat-card-emoji" aria-hidden="true">🐟</span>
+            <h3>Attiéké poisson</h3>
+            <p>Semoule de manioc, poisson frit, sauce piment.</p>
+            <span class="plat-card-prix">2 000 FCFA</span>
+          </article>
+          <article class="plat-card">
+            <span class="plat-card-emoji" aria-hidden="true">🔥</span>
+            <h3>Poulet braisé</h3>
+            <p>Poulet entier braisé, attiéké ou alloco.</p>
+            <span class="plat-card-prix">3 000 FCFA</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Avis démo -->
+    <section class="avis">
+      <div class="container">
+        <h2 class="section-titre">Ils disent…</h2>
+        <p class="avis-avert">Avis de démonstration — personnages fictifs.</p>
+        <div class="avis-grid">
+          <blockquote class="avis-carte">
+            <p>« On dirait la cuisine de ma maman, en mieux. »</p>
+            <footer>— <cite>Awa K., cliente fictive</cite></footer>
+          </blockquote>
+          <blockquote class="avis-carte">
+            <p>« Le poulet braisé, y a pas deux dèh ! »</p>
+            <footer>— <cite>Yao B., client fictif</cite></footer>
+          </blockquote>
+          <blockquote class="avis-carte">
+            <p>« Ambiance douce, service rapide, on revient. »</p>
+            <footer>— <cite>Fatou D., cliente fictive</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="cta-final">
+      <div class="container cta-final-inner">
+        <h2>Venez manger !</h2>
+        <p>Réservez votre table en un clic, on s'occupe du reste.</p>
+        <a class="btn btn-primary" href="reservation.html" data-i18n="home.cta_reserver">Réserver une table</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FAB WHATSAPP ================= -->
+  <a id="whatsapp-fab" class="whatsapp-fab" role="button" aria-label="Contacter sur WhatsApp">
+    <span aria-hidden="true">💬</span>
+  </a>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Chez Tantie</div>
+        <div class="footer-note" data-i18n="footer.mentions">Projet fictif — démonstration</div>
+      </div>
+      <div class="footer-note" data-i18n="footer.merci">Merci !</div>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/menu-livre.js"></script>
+  <script defer src="js/galerie.js"></script>
+  <script defer src="js/reservation.js"></script>
+</body>
+</html>

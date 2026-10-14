@@ -1,0 +1,41 @@
+{
+  "categories": [
+    { "id": "entrees",         "emoji": "🥟", "ordre": 1 },
+    { "id": "plats",           "emoji": "🍗", "ordre": 2 },
+    { "id": "grillades",       "emoji": "🔥", "ordre": 3 },
+    { "id": "accompagnements", "emoji": "🍟", "ordre": 4 },
+    { "id": "boissons",        "emoji": "🍺", "ordre": 5 },
+    { "id": "desserts",        "emoji": "🍦", "ordre": 6 }
+  ],
+  "plats": [
+    { "id": "p001", "nom_fr": "Alloco",             "nom_nouchi": "Alloco",         "desc_fr": "Bananes plantains frites",                       "desc_nouchi": "", "prix": 500,  "categorie": "entrees",         "emoji": "🍌", "disponible": true,  "image": null },
+    { "id": "p002", "nom_fr": "Gbofloto",           "nom_nouchi": "Gbofloto",       "desc_fr": "Beignets sucrés moelleux",                     "desc_nouchi": "", "prix": 200,  "categorie": "entrees",         "emoji": "🍩", "disponible": true,  "image": null },
+    { "id": "p003", "nom_fr": "Beignets haricots",  "nom_nouchi": "",               "desc_fr": "Pâte de haricots frite, sauce piment",         "desc_nouchi": "", "prix": 300,  "categorie": "entrees",         "emoji": "🥟", "disponible": true,  "image": null },
+
+    { "id": "p010", "nom_fr": "Sauce graine",       "nom_nouchi": "",               "desc_fr": "Sauce de noix de palme, viande ou poisson",    "desc_nouchi": "", "prix": 1500, "categorie": "plats",           "emoji": "🥘", "disponible": true,  "image": null },
+    { "id": "p011", "nom_fr": "Kedjenou de poulet", "nom_nouchi": "",               "desc_fr": "Poulet mijoté aux légumes, à l'étouffée",      "desc_nouchi": "", "prix": 2500, "categorie": "plats",           "emoji": "🍗", "disponible": true,  "image": null },
+    { "id": "p012", "nom_fr": "Riz gras",           "nom_nouchi": "",               "desc_fr": "Riz cuisiné à la tomate et aux épices",        "desc_nouchi": "", "prix": 1200, "categorie": "plats",           "emoji": "🍚", "disponible": true,  "image": null },
+    { "id": "p013", "nom_fr": "Attiéké poisson",    "nom_nouchi": "Attiéké poisson","desc_fr": "Semoule de manioc, poisson frit, sauce",       "desc_nouchi": "", "prix": 2000, "categorie": "plats",           "emoji": "🐟", "disponible": true,  "image": null },
+
+    { "id": "p020", "nom_fr": "Poulet braisé",      "nom_nouchi": "",               "desc_fr": "Poulet entier braisé, attiéké ou alloco",      "desc_nouchi": "", "prix": 3000, "categorie": "grillades",       "emoji": "🔥", "disponible": true,  "image": null },
+    { "id": "p021", "nom_fr": "Poisson braisé",     "nom_nouchi": "",               "desc_fr": "Bar entier braisé, sauce tomate piment",       "desc_nouchi": "", "prix": 2500, "categorie": "grillades",       "emoji": "🐟", "disponible": true,  "image": null },
+    { "id": "p022", "nom_fr": "Brochettes de bœuf", "nom_nouchi": "",               "desc_fr": "Brochettes marinées grillées",                 "desc_nouchi": "", "prix": 1000, "categorie": "grillades",       "emoji": "🍢", "disponible": true,  "image": null },
+
+    { "id": "p030", "nom_fr": "Attiéké nature",     "nom_nouchi": "Attiéké",        "desc_fr": "Semoule de manioc",                            "desc_nouchi": "", "prix": 500,  "categorie": "accompagnements", "emoji": "🥣", "disponible": true,  "image": null },
+    { "id": "p031", "nom_fr": "Riz blanc",          "nom_nouchi": "",               "desc_fr": "Riz parfumé",                                  "desc_nouchi": "", "prix": 500,  "categorie": "accompagnements", "emoji": "🍚", "disponible": true,  "image": null },
+    { "id": "p032", "nom_fr": "Frites d'igname",    "nom_nouchi": "",               "desc_fr": "Igname frite croustillante",                   "desc_nouchi": "", "prix": 700,  "categorie": "accompagnements", "emoji": "🍟", "disponible": true,  "image": null },
+    { "id": "p033", "nom_fr": "Foutou banane",      "nom_nouchi": "Foutou",         "desc_fr": "Foutou de banane plantain",                    "desc_nouchi": "", "prix": 800,  "categorie": "accompagnements", "emoji": "🍌", "disponible": true,  "image": null },
+
+    { "id": "p040", "nom_fr": "Bissap",             "nom_nouchi": "",               "desc_fr": "Infusion d'hibiscus glacée",                   "desc_nouchi": "", "prix": 500,  "categorie": "boissons",        "emoji": "🍹", "disponible": true,  "image": null },
+    { "id": "p041", "nom_fr": "Gnamakoudji",        "nom_nouchi": "Gnamakou",       "desc_fr": "Jus de gingembre frais",                       "desc_nouchi": "", "prix": 500,  "categorie": "boissons",        "emoji": "🍵", "disponible": true,  "image": null },
+    { "id": "p042", "nom_fr": "Jus de baobab",      "nom_nouchi": "Pain de singe",  "desc_fr": "Jus de fruit de baobab",                       "desc_nouchi": "", "prix": 500,  "categorie": "boissons",        "emoji": "🥤", "disponible": true,  "image": null },
+    { "id": "p043", "nom_fr": "Bière locale",       "nom_nouchi": "",               "desc_fr": "Bière blonde servie fraîche",                  "desc_nouchi": "", "prix": 1000, "categorie": "boissons",        "emoji": "🍺", "disponible": true,  "image": null },
+    { "id": "p044", "nom_fr": "Sucrerie",           "nom_nouchi": "",               "desc_fr": "Soda au choix",                                "desc_nouchi": "", "prix": 700,  "categorie": "boissons",        "emoji": "🥤", "disponible": true,  "image": null },
+    { "id": "p045", "nom_fr": "Eau minérale",       "nom_nouchi": "",               "desc_fr": "Bouteille 50cl",                               "desc_nouchi": "", "prix": 300,  "categorie": "boissons",        "emoji": "💧", "disponible": true,  "image": null },
+
+    { "id": "p050", "nom_fr": "Dèguè",              "nom_nouchi": "Dèguè",          "desc_fr": "Yaourt, mil, vanille",                         "desc_nouchi": "", "prix": 700,  "categorie": "desserts",        "emoji": "🥛", "disponible": true,  "image": null },
+    { "id": "p051", "nom_fr": "Ananas frais",       "nom_nouchi": "",               "desc_fr": "Ananas découpé",                               "desc_nouchi": "", "prix": 500,  "categorie": "desserts",        "emoji": "🍍", "disponible": true,  "image": null },
+    { "id": "p052", "nom_fr": "Mangue fraîche",     "nom_nouchi": "",               "desc_fr": "Mangue mûre découpée",                         "desc_nouchi": "", "prix": 500,  "categorie": "desserts",        "emoji": "🥭", "disponible": true,  "image": null },
+    { "id": "p053", "nom_fr": "Glace coco",         "nom_nouchi": "",               "desc_fr": "Glace artisanale à la noix de coco",           "desc_nouchi": "", "prix": 800,  "categorie": "desserts",        "emoji": "🍦", "disponible": true,  "image": null }
+  ]
+}

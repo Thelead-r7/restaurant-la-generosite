@@ -1,0 +1,205 @@
+/* =========================================================
+   Chez Tantie — css/contact.css
+   Coordonnées, horaires, plan stylisé.
+   ========================================================= */
+
+/* ---------- Intro ---------- */
+.contact-intro { padding-bottom: 0.5rem; }
+.contact-sous {
+  color: var(--ct-muted);
+  max-width: 55ch;
+  margin-top: 0.5rem;
+}
+.contact-avert {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--ct-radius-sm);
+  background: rgba(230,126,34,0.12);
+  color: #8a4a0f;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.contact-section { padding-top: 1rem; }
+
+/* ---------- Grille ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+/* ---------- Colonne infos ---------- */
+.contact-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-bloc {
+  background: var(--ct-blanc);
+  border-radius: var(--ct-radius);
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--ct-card-shadow);
+  border-left: 4px solid var(--ct-accent);
+  transition: border-color var(--ct-anim-intensity) var(--ct-ease),
+              box-shadow   var(--ct-anim-intensity) var(--ct-ease);
+}
+
+.contact-bloc-titre {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  color: var(--ct-noir);
+}
+.contact-bloc-emoji {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.contact-valeur {
+  font-size: 1rem;
+  color: var(--ct-fg);
+  margin-bottom: 0.3rem;
+}
+.contact-exemple {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92rem;
+  background: rgba(28,28,28,0.06);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.contact-mention {
+  font-size: 0.8rem;
+  color: var(--ct-muted);
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+
+/* ---------- Horaires ---------- */
+.horaires {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.horaire-ligne {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed rgba(28,28,28,0.08);
+}
+.horaire-ligne:last-child { border-bottom: 0; }
+.horaire-ligne dt { color: var(--ct-noir); font-weight: 500; }
+.horaire-ligne dd { color: var(--ct-muted); }
+
+/* ---------- Bouton WhatsApp direct ---------- */
+.contact-wa {
+  margin-top: 0.75rem;
+  background: #25D366;
+  color: #fff;
+}
+.contact-wa:hover { filter: brightness(1.05); }
+
+/* ---------- Plan stylisé ---------- */
+.contact-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.plan-carte {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--ct-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ct-card-shadow);
+  background: #e9f0e4;
+}
+
+.plan-fond {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(230,126,34,0.18), transparent 60%),
+    linear-gradient(135deg, #eaf4ea, #d8ecd4 60%, #cfe6cc);
+}
+
+/* Routes stylisées */
+.plan-rue {
+  position: absolute;
+  background: rgba(255,255,255,0.75);
+  box-shadow: 0 0 0 1px rgba(28,28,28,0.04) inset;
+}
+.plan-rue-h {
+  left: -5%;
+  right: -5%;
+  top: 55%;
+  height: 26px;
+  transform: rotate(-3deg);
+}
+.plan-rue-v {
+  top: -5%;
+  bottom: -5%;
+  left: 30%;
+  width: 22px;
+  transform: rotate(2deg);
+}
+
+/* Marqueur */
+.plan-marqueur {
+  position: absolute;
+  top: 40%;
+  left: 58%;
+  font-size: 2.4rem;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+  animation: plan-bounce 2s var(--ct-ease) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .plan-marqueur { animation: none; }
+}
+@keyframes plan-bounce {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50%      { transform: translate(-50%, -58%); }
+}
+
+/* Étiquette */
+.plan-label {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: var(--ct-noir);
+  color: var(--ct-creme);
+  font-family: var(--ct-font-title);
+  font-weight: 600;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  white-space: nowrap;
+}
+
+/* ---------- Code inline ---------- */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  background: rgba(28,28,28,0.07);
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+}

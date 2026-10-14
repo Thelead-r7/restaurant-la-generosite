@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Illustration Chez Tantie — ambiance maquis ivoirien">
+  <defs>
+    <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF3E0"/>
+      <stop offset="1" stop-color="#E67E22" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="sol" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#27AE60" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#1C1C1C" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#ciel)"/>
+  <path d="M0 420 Q200 380 400 420 T800 420 L800 600 L0 600 Z" fill="url(#sol)"/>
+  <circle cx="400" cy="280" r="110" fill="#FFFFFF" opacity="0.55"/>
+  <text x="400" y="308" text-anchor="middle" font-family="Poppins, system-ui, sans-serif" font-size="96">🍲</text>
+  <text x="400" y="510" text-anchor="middle" font-family="Poppins, system-ui, sans-serif" font-size="34" font-weight="700" fill="#1C1C1C">Chez Tantie</text>
+  <text x="400" y="548" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#1C1C1C" opacity="0.7">Abidjan · Démo</text>
+</svg>

@@ -1,0 +1,35 @@
+{
+  "nav.accueil": "Accueil",
+  "nav.menu": "Menu",
+  "nav.galerie": "Galerie",
+  "nav.reservation": "Réserver",
+  "nav.contact": "Contact",
+
+  "home.slogan": "Le goût du pays, au coin de la rue.",
+  "home.cta_menu": "Voir le menu",
+  "home.cta_reserver": "Réserver une table",
+
+  "menu.titre": "Notre menu",
+  "menu.ouvrir": "Ouvrir le menu",
+  "menu.precedent": "Précédent",
+  "menu.suivant": "Suivant",
+
+  "galerie.titre": "Notre galerie",
+  "galerie.filtre_tout": "Tout",
+
+  "resa.titre": "Réserver une table",
+  "resa.nom": "Votre nom",
+  "resa.tel": "Téléphone",
+  "resa.date": "Date",
+  "resa.heure": "Heure",
+  "resa.personnes": "Nombre de personnes",
+  "resa.message": "Message (facultatif)",
+  "resa.envoyer": "Envoyer sur WhatsApp",
+
+  "contact.titre": "Nous trouver",
+  "contact.adresse": "Adresse",
+  "contact.horaires": "Horaires",
+
+  "footer.merci": "Merci !",
+  "footer.mentions": "Projet fictif — démonstration"
+}

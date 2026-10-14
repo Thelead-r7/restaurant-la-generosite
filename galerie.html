@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E67E22">
+  <title>Galerie — Chez Tantie</title>
+  <meta name="description" content="Galerie photo de Chez Tantie : plats, ambiance, équipe, lieu. Projet fictif de démonstration.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/galerie.css">
+</head>
+<body class="ambiance">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Chez Tantie</a>
+
+      <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+        <a href="index.html" data-i18n="nav.accueil">Accueil</a>
+        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+        <a href="galerie.html" data-i18n="nav.galerie">Galerie</a>
+        <a href="reservation.html" data-i18n="nav.reservation">Réserver</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="header-tools">
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Basculer la langue">FR</button>
+
+        <div class="ambiance-switch" role="group" aria-label="Ambiance du site">
+          <button type="button" data-ambiance="calme"   aria-pressed="false" aria-label="Ambiance calme">🌿</button>
+          <button type="button" data-ambiance="ambiance" aria-pressed="true"  aria-label="Ambiance normale">🔥</button>
+          <button type="button" data-ambiance="fete"    aria-pressed="false" aria-label="Ambiance fête">🎉</button>
+        </div>
+
+        <button id="burger" class="burger" type="button"
+                aria-label="Ouvrir le menu" aria-controls="site-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <section class="galerie-intro">
+      <div class="container">
+        <h1 class="section-titre" data-i18n="galerie.titre">Notre galerie</h1>
+        <p class="galerie-sous">
+          Un aperçu des plats, de l'ambiance et de l'équipe.
+        </p>
+        <p class="galerie-avert">
+          ⚠️ Photos de démonstration — placeholders colorés (aucune image réelle).
+        </p>
+      </div>
+    </section>
+
+    <!-- Filtres -->
+    <section class="galerie-filtres-wrap">
+      <div class="container">
+        <div class="galerie-filtres" role="group" aria-label="Filtrer la galerie">
+          <button type="button" data-filtre="tout"     aria-pressed="true"  data-i18n="galerie.filtre_tout">Tout</button>
+          <button type="button" data-filtre="plats"    aria-pressed="false">Plats</button>
+          <button type="button" data-filtre="ambiance" aria-pressed="false">Ambiance</button>
+          <button type="button" data-filtre="equipe"   aria-pressed="false">Équipe</button>
+          <button type="button" data-filtre="lieu"     aria-pressed="false">Lieu</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grille -->
+    <section class="galerie-section">
+      <div class="container">
+        <div id="galerie" class="galerie-grid">
+
+          <!-- Plats -->
+          <div class="galerie-item" data-cat="plats" tabindex="0" role="button"
+               data-titre="Attiéké poisson"
+               data-desc="Semoule de manioc, poisson frit, sauce piment."
+               data-emoji="🐟" data-couleur="linear-gradient(135deg, #E67E22, #F5B041)"
+               aria-label="Voir Attiéké poisson">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #E67E22, #F5B041);">
+              <span aria-hidden="true">🐟</span>
+            </div>
+          </div>
+
+          <div class="galerie-item" data-cat="plats" tabindex="0" role="button"
+               data-titre="Kedjenou de poulet"
+               data-desc="Poulet mijoté aux légumes, à l'étouffée."
+               data-emoji="🍗" data-couleur="linear-gradient(135deg, #C0392B, #E67E22)"
+               aria-label="Voir Kedjenou de poulet">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #C0392B, #E67E22);">
+              <span aria-hidden="true">🍗</span>
+            </div>
+          </div>
+
+          <div class="galerie-item" data-cat="plats" tabindex="0" role="button"
+               data-titre="Poulet braisé"
+               data-desc="Poulet entier braisé, attiéké ou alloco."
+               data-emoji="🔥" data-couleur="linear-gradient(135deg, #1C1C1C, #E67E22)"
+               aria-label="Voir Poulet braisé">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #1C1C1C, #E67E22);">
+              <span aria-hidden="true">🔥</span>
+            </div>
+          </div>
+
+          <div class="galerie-item" data-cat="plats" tabindex="0" role="button"
+               data-titre="Bissap maison"
+               data-desc="Infusion d'hibiscus glacée."
+               data-emoji="🍹" data-couleur="linear-gradient(135deg, #8E44AD, #E91E63)"
+               aria-label="Voir Bissap maison">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #8E44AD, #E91E63);">
+              <span aria-hidden="true">🍹</span>
+            </div>
+          </div>
+
+          <!-- Ambiance -->
+          <div class="galerie-item" data-cat="ambiance" tabindex="0" role="button"
+               data-titre="Sous les guirlandes"
+               data-desc="Le soir, les lumières s'allument."
+               data-emoji="✨" data-couleur="linear-gradient(135deg, #F39C12, #C0392B)"
+               aria-label="Voir Sous les guirlandes">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #F39C12, #C0392B);">
+              <span aria-hidden="true">✨</span>
+            </div>
+          </div>
+
+          <div class="galerie-item" data-cat="ambiance" tabindex="0" role="button"
+               data-titre="Tabourets en bois"
+               data-desc="Assis dehors, à l'ombre du manguier."
+               data-emoji="🌳" data-couleur="linear-gradient(135deg, #27AE60, #1C1C1C)"
+               aria-label="Voir Tabourets en bois">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #27AE60, #1C1C1C);">
+              <span aria-hidden="true">🌳</span>
+            </div>
+          </div>
+
+          <div class="galerie-item" data-cat="ambiance" tabindex="0" role="button"
+               data-titre="Musique live"
+               data-desc="Concerts acoustiques le week-end."
+               data-emoji="🎵" data-couleur="linear-gradient(135deg, #2980B9, #8E44AD)"
+               aria-label="Voir Musique live">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #2980B9, #8E44AD);">
+              <span aria-hidden="true">🎵</span>
+            </div>
+          </div>
+
+          <!-- Équipe -->
+          <div class="galerie-item" data-cat="equipe" tabindex="0" role="button"
+               data-titre="Tantie en cuisine"
+               data-desc="La patronne aux fourneaux."
+               data-emoji="👩🏾‍🍳" data-couleur="linear-gradient(135deg, #E67E22, #C0392B)"
+               aria-label="Voir Tantie en cuisine">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #E67E22, #C0392B);">
+              <span aria-hidden="true">👩🏾‍🍳</span>
+            </div>
+          </div>
+
+          <div class="galerie-item" data-cat="equipe" tabindex="0" role="button"
+               data-titre="Le braisier"
+               data-desc="Le maître du feu, au charbon."
+               data-emoji="👨🏾‍🍳" data-couleur="linear-gradient(135deg, #1C1C1C, #E67E22)"
+               aria-label="Voir Le braisier">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #1C1C1C, #E67E22);">
+              <span aria-hidden="true">👨🏾‍🍳</span>
+            </div>
+          </div>
+
+          <!-- Lieu -->
+          <div class="galerie-item" data-cat="lieu" tabindex="0" role="button"
+               data-titre="La cour"
+               data-desc="Espace ombragé, tables en bois."
+               data-emoji="🏡" data-couleur="linear-gradient(135deg, #27AE60, #F39C12)"
+               aria-label="Voir La cour">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #27AE60, #F39C12);">
+              <span aria-hidden="true">🏡</span>
+            </div>
+          </div>
+
+          <div class="galerie-item" data-cat="lieu" tabindex="0" role="button"
+               data-titre="Le bar"
+               data-desc="Boissons fraîches, service au comptoir."
+               data-emoji="🍺" data-couleur="linear-gradient(135deg, #F1C40F, #E67E22)"
+               aria-label="Voir Le bar">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #F1C40F, #E67E22);">
+              <span aria-hidden="true">🍺</span>
+            </div>
+          </div>
+
+          <div class="galerie-item" data-cat="lieu" tabindex="0" role="button"
+               data-titre="L'entrée"
+               data-desc="Bienvenue Chez Tantie."
+               data-emoji="🚪" data-couleur="linear-gradient(135deg, #E67E22, #27AE60)"
+               aria-label="Voir L'entrée">
+            <div class="galerie-vignette galerie-ph" style="--g: linear-gradient(135deg, #E67E22, #27AE60);">
+              <span aria-hidden="true">🚪</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true"
+       aria-labelledby="lightbox-titre" aria-hidden="true">
+    <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Fermer">×</button>
+    <div class="lightbox-contenu">
+      <div class="lightbox-visuel">
+        <img id="lightbox-img" alt="" style="display:none;">
+        <div id="lightbox-placeholder" class="lightbox-ph" style="display:none;"></div>
+      </div>
+      <div class="lightbox-texte">
+        <h3 id="lightbox-titre"></h3>
+        <p  id="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FAB WHATSAPP ================= -->
+  <a id="whatsapp-fab" class="whatsapp-fab" role="button" aria-label="Contacter sur WhatsApp">
+    <span aria-hidden="true">💬</span>
+  </a>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Chez Tantie</div>
+        <div class="footer-note" data-i18n="footer.mentions">Projet fictif — démonstration</div>
+      </div>
+      <div class="footer-note" data-i18n="footer.merci">Merci !</div>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/menu-livre.js"></script>
+  <script defer src="js/galerie.js"></script>
+  <script defer src="js/reservation.js"></script>
+</body>
+</html>

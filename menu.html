@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E67E22">
+  <title>Menu — Chez Tantie</title>
+  <meta name="description" content="Menu du maquis Chez Tantie : entrées, plats, grillades, accompagnements, boissons, desserts. Projet fictif.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body class="ambiance">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Chez Tantie</a>
+
+      <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+        <a href="index.html" data-i18n="nav.accueil">Accueil</a>
+        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+        <a href="galerie.html" data-i18n="nav.galerie">Galerie</a>
+        <a href="reservation.html" data-i18n="nav.reservation">Réserver</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="header-tools">
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Basculer la langue">FR</button>
+
+        <div class="ambiance-switch" role="group" aria-label="Ambiance du site">
+          <button type="button" data-ambiance="calme"   aria-pressed="false" aria-label="Ambiance calme">🌿</button>
+          <button type="button" data-ambiance="ambiance" aria-pressed="true"  aria-label="Ambiance normale">🔥</button>
+          <button type="button" data-ambiance="fete"    aria-pressed="false" aria-label="Ambiance fête">🎉</button>
+        </div>
+
+        <button id="burger" class="burger" type="button"
+                aria-label="Ouvrir le menu" aria-controls="site-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <section class="menu-intro">
+      <div class="container">
+        <h1 class="section-titre" data-i18n="menu.titre">Notre menu</h1>
+        <p class="menu-sous">
+          Feuilletez notre livre : entrées, plats du pays, grillades braisées,
+          accompagnements, boissons fraîches et desserts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Livre -->
+    <section class="menu-livre-section">
+      <div class="container">
+        <div id="menu-livre" class="livre" aria-label="Menu animé">
+
+          <!-- Couverture -->
+          <div id="livre-couverture" class="livre-couverture">
+            <div class="livre-couverture-inner">
+              <span class="livre-couverture-emoji" aria-hidden="true">🍲</span>
+              <h2 class="livre-couverture-titre">Chez Tantie</h2>
+              <p class="livre-couverture-sous">Menu du jour</p>
+              <button id="livre-ouvrir" class="btn btn-primary" type="button"
+                      data-i18n="menu.ouvrir">Ouvrir le menu</button>
+            </div>
+          </div>
+
+          <!-- Zone des pages (remplie par JS) -->
+          <div id="livre-pages" class="livre-pages" aria-live="polite"></div>
+
+          <!-- Contrôles -->
+          <div class="livre-controles">
+            <button id="livre-prev" class="livre-nav" type="button"
+                    aria-label="Page précédente" data-i18n="menu.precedent">Précédent</button>
+            <span id="livre-indicateur" class="livre-indicateur" aria-live="polite"></span>
+            <button id="livre-next" class="livre-nav" type="button"
+                    aria-label="Page suivante" data-i18n="menu.suivant">Suivant</button>
+          </div>
+
+        </div>
+
+        <p class="menu-note">
+          Astuce : sur mobile, balayez à gauche ou à droite pour tourner les pages.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FAB WHATSAPP ================= -->
+  <a id="whatsapp-fab" class="whatsapp-fab" role="button" aria-label="Contacter sur WhatsApp">
+    <span aria-hidden="true">💬</span>
+  </a>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Chez Tantie</div>
+        <div class="footer-note" data-i18n="footer.mentions">Projet fictif — démonstration</div>
+      </div>
+      <div class="footer-note" data-i18n="footer.merci">Merci !</div>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/menu-livre.js"></script>
+  <script defer src="js/galerie.js"></script>
+  <script defer src="js/reservation.js"></script>
+</body>
+</html>
