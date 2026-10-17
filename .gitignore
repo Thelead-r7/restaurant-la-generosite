@@ -1,0 +1,31 @@
+# Dépendances
+node_modules/
+.npm/
+pnpm-lock.yaml
+
+# Variables d'environnement (secret)
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Supabase local (si utilisé un jour)
+supabase/.temp/
+supabase/.branches/
+
+# Token migrations Supabase (PAT)
+scripts/.token
